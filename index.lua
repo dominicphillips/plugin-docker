@@ -3,6 +3,7 @@ local http     = require('http')
 local boundary = require('boundary')
 local json     = require('_json')
 local async    = require('async')
+local io       = require('io')
 
 
 local __pgk        = "BOUNDARY DOCKER"
