@@ -10,11 +10,14 @@ local _previous    = {}
 local pollInterval = 1000
 local host         = "localhost"
 local port         = 2375
+local source
 
 if (boundary.param ~= nil) then
-  pollInterval = boundary.param['pollInterval'] or pollInterval
-  host         = boundary.param['host'] or host
-  port         = boundary.param['port'] or port
+  pollInterval       = boundary.param['pollInterval'] or pollInterval
+  host               = boundary.param['host'] or host
+  port               = boundary.param['port'] or port
+  source             = (type(boundary.param.source) == 'string' and boundary.param.source:gsub('%s+', '') ~= '' and boundary.param.source) or
+   io.popen("uname -n"):read('*line')
 end
 
 function berror(err)
@@ -77,7 +80,6 @@ function maxmin(t)
   return max, min
 end
 
-local source = "localhost"
 
 print("_bevent:Docker plugin up : version 1.0|t:info|tags:nginx,lua,plugin")
 
