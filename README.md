@@ -31,7 +31,6 @@ https://docs.docker.com/reference/api/docker_remote_api/
 ### Metrics Collected
 |Metric Name          |Description                       |
 |:--------------------|:---------------------------------|
-
 | DOCKER_TOTAL_CPU_USAGE | Docker total cpu usage, all running containers
 | DOCKER_TOTAL_MEMORY_USAGE | Docker total memory usage, all running containers
 | DOCKER_MEAN_MEMORY_USAGE | Docker mean memory usage, all running containers
